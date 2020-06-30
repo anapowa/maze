@@ -22,9 +22,9 @@ DEVELOPMENT PLAN:
         - If (winning position) {do something}
 
 TERMS:
-Model: Representation of what needs to be created. In this example the map array is a model of the maze I want to create on the webpage. It's easy to for a developer to manipulate using code. 
+- Model: Representation of what needs to be created. In this example the map array is a model of the maze I want to create on the webpage. It's easy to for a developer to manipulate using code. 
 
-View: Real representation onto the webpage done with html markup of the model.
+- View: Real representation onto the webpage done with html markup of the model.
 
     The same model can be used to represent different views. 
     E.g:
@@ -32,4 +32,7 @@ View: Real representation onto the webpage done with html markup of the model.
     - Basic ray-caster
     - html markup
 
-MVC Architecture: controler of how the user interacts with the view. 
+- MVC Architecture: controler of how the user interacts with the view. 
+
+- Template literals (Template strings): They are string literals allowing embedded expressions. 
+They are enclosed by the backtick (` `) (grave accent) character instead of double or single quotes. They can contain placeholders indicated by the dollar sign and curly braces (${expression}).
