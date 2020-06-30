@@ -20,3 +20,16 @@ DEVELOPMENT PLAN:
         1. Use CSS absolute position to update the position relative to the board || append each instance of the new position to the board. 
         2. Use animation to show the player is in the winning position.
         - If (winning position) {do something}
+
+TERMS:
+Model: Representation of what needs to be created. In this example the map array is a model of the maze I want to create on the webpage. It's easy to for a developer to manipulate using code. 
+
+View: Real representation onto the webpage done with html markup of the model.
+
+    The same model can be used to represent different views. 
+    E.g:
+    - Canvas API
+    - Basic ray-caster
+    - html markup
+
+MVC Architecture: controler of how the user interacts with the view. 
