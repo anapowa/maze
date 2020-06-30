@@ -2,9 +2,36 @@
     box-sizing: border-box;
 }
     
+@font-face {
+    font-family: "Nintendo";
+    src: url('Nintendo-DS-BIOS copy.ttf');
+}
+
+body{
+    font-family: "Nintendo", Fallback, Helvetica, Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+h1 {
+    font-weight: bolder;
+    font-size: 3em; 
+    color: rgb(150, 65, 35);
+}
+
+#instruct {
+    font-size: 1.5em;
+}
+
+#cursor {
+    font-size: 0.9em;
+    color: rgb(99, 154, 232);
+
+}
+
 #maze {
     height: 500px;
-    background-color: goldenrod;
+    background-color: rgb(243, 220, 145);
     display: flex;
     flex-direction: column;
 
@@ -21,11 +48,17 @@
 }
 
 .block.wall {
-    background-color: forestgreen;
+    background-color: rgb(65, 140, 50);
 }
 
 #start {
     background-color: fuchsia;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 1px;
+    height: 0px;
 }
 
 #finish {

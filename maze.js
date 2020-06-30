@@ -16,6 +16,8 @@ const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
 ];
 
+let y
+let x
 
 const mazeEl = document.getElementById("maze")
 
@@ -32,7 +34,9 @@ const createMaze = function (blueprint) {
                     blockDivs += "<div class='block wall'></div>"
                     break;
                 case "S":
-                    blockDivs += "<div class='block' id='start'></div>"
+                    blockDivs += "<div class='block'><div id='start'>START</div></div>"
+                    y = rowNum
+                    x = colNum
                     break;
                 case "F":
                     blockDivs += "<div class='block' id='finish'></div>"
