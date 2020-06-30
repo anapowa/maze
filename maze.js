@@ -58,28 +58,41 @@ const createMaze = function (blueprint) {
 
 createMaze(map)
 
-document.addEventListener('keydown', logKey);
-let boxTop = 270;
-let boxLeft = 0;
+document.addEventListener('keydown', moveLink);
+let linkTopPos = 270;
+let linkLeftPos = 0;
+let linkInCell = x + "-" + y
 
-function logKey(evt) {
+function moveLink(evt) {
     switch (evt.code){
         case "ArrowDown":
-            boxTop += 30
+            // if(class!==wall)
+            linkTopPos += 30
+            linkInCell = x + "-" + (y+1)
+            y += 1
             break; 
         case "ArrowUp":
-            boxTop -= 30
+            linkTopPos -= 30
+            linkInCell = x + "-" + (y-1)
+            y -= 1
             break;
         case "ArrowLeft":
-            boxLeft -= 30
+            linkLeftPos -= 30
+            linkInCell = (x-1) + "-" + y
+            x -= 1
             break;
         case "ArrowRight":
-            boxLeft += 30
+            linkLeftPos += 30;
+            linkInCell = (x+1) + "-" + y;
+            x += 1
             break;
+
     }
 
-document.getElementById("link").style.top = boxTop + "px";
-document.getElementById("link").style.left = boxLeft + "px";
+document.getElementById("link").style.top = linkTopPos + "px";
+document.getElementById("link").style.left = linkLeftPos + "px";
+
+console.log(linkInCell)
 }
 
 
