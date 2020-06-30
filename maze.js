@@ -16,8 +16,8 @@ const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
 ];
 
-let y
-let x
+let y=0
+let x=0
 
 const mazeEl = document.getElementById("maze")
 const linkPlayer = document.getElementById("link")
@@ -37,15 +37,15 @@ const createMaze = function (blueprint) {
                     blockDivs += "<div class='block wall'></div>"
                     break;
                 case "S":
-                       blockDivs += "<div class='block' id='start'>START<img id='link' src='link_nes.png'></img></div>"
+                       blockDivs += '<div id="cell' + colNum + "-" + rowNum + '" class="block start" >START<img id="link" src="link_nes.png"></img></div>'
                     y = rowNum
                     x = colNum
                     break;
                 case "F":
-                    blockDivs += "<div class='block' id='finish'>FINISH<img id='triforce' src='240px-Triforce_Logo.png'></img></div>"
+                    blockDivs += '<div id="cell' + colNum + '-' + rowNum + '" class="block finish">FINISH<img id="triforce" src="240px-Triforce_Logo.png"></img></div>'
                     break;
                 default:
-                    blockDivs += "<div class='block'></div>"
+                    blockDivs += '<div id="cell' + colNum + '-' + rowNum + '" class="block"></div>'
             }   
         }
 
@@ -58,6 +58,29 @@ const createMaze = function (blueprint) {
 
 createMaze(map)
 
+document.addEventListener('keydown', logKey);
+let boxTop = 270;
+let boxLeft = 0;
+
+function logKey(evt) {
+    switch (evt.code){
+        case "ArrowDown":
+            boxTop += 30
+            break; 
+        case "ArrowUp":
+            boxTop -= 30
+            break;
+        case "ArrowLeft":
+            boxLeft -= 30
+            break;
+        case "ArrowRight":
+            boxLeft += 30
+            break;
+    }
+
+document.getElementById("link").style.top = boxTop + "px";
+document.getElementById("link").style.left = boxLeft + "px";
+}
 
 
 /* REFACTORING? */

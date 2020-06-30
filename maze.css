@@ -12,6 +12,7 @@ body{
     background-color: black;
     color: white;
     text-align: center;
+    position: relative;
 }
 h1 {
     font-weight: bolder;
@@ -30,13 +31,14 @@ h1 {
 }
 
 #maze {
-    height: 500px;
-    /* width: 420px;
-    height: 300px; */
+    position: relative;
+    /* height: 500px; */
+    width: 630px;
+    height: 450px;
     background-color: rgb(243, 220, 145);
     display: flex;
     flex-direction: column;
-
+    margin: 0 auto;
 }
 
 .row{
@@ -53,41 +55,37 @@ h1 {
     background-color: rgb(65, 140, 50);
 }
 
-#start {
+.block.start {
     background-color: fuchsia;
     font-size: 1em;
     padding: 0;
     margin: 0;
     text-align: center;
-    width: 1px;
+    width: 0px;
     height: 0px;
     color: rgb(150, 65, 35);
 }
 
-#finish {
-    background-color: honeydew;
+.block.finish {
     color: rgb(150, 65, 35);
     text-align: center;
     padding: 0;
-    margin: 0;
-    width: 1px;
-    height: 0px;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
 
 }
 
 #link{
-    width:100%;
-    /* padding-bottom:100%; */
-    position:relative;
-    top: 0;
-    left: 0;
-    margin-top: -40%;
-    /* position:absolute;   */
-    /* '><iframe src='link_nes.png' width='100%' height='100%' style='position:absolute' frameBorder='0' allowFullScreen */
+    width: 5%;
+    position: absolute;
+    top: 270px;
+    left: 0px;
 }
 
 #triforce{
-    width:75%;
-    position:relative;
-    margin-top: -30%;
+    width:4%;
+    position: absolute;
+    top: 240px;
+    left: 605px;
 }
