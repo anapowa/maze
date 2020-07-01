@@ -89,3 +89,10 @@ h1 {
     top: 240px;
     left: 605px;
 }
+
+#grabTriforce{
+    width:4%;
+    position: absolute;
+    top: 225px;
+    left: 605px;
+}

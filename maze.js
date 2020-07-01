@@ -1,3 +1,5 @@
+//Based on code from Randy's demo from 25JUN2020, 29JUN2020 
+//and Study Hall with coach Marcus Chiriboga on 29JUN2020.
 const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
     "W   W     W     W W W",
@@ -20,7 +22,6 @@ let y=0
 let x=0
 
 const mazeEl = document.getElementById("maze")
-const linkPlayer = document.getElementById("link")
 
 // function 
 
@@ -37,7 +38,7 @@ const createMaze = function (blueprint) {
                     blockDivs += "<div class='block wall'></div>"
                     break;
                 case "S":
-                       blockDivs += '<div id="cell' + colNum + "-" + rowNum + '" class="block start" >START<img id="link" src="link_nes.png"></img></div>'
+                    blockDivs += '<div id="cell' + colNum + "-" + rowNum + '" class="block start" >START<img id="link" src="link_nes.png"></img></div>'
                     y = rowNum
                     x = colNum
                     break;
@@ -52,47 +53,85 @@ const createMaze = function (blueprint) {
     mazeEl.innerHTML += `<div class="row">${blockDivs}</div>`
     // mazeEl.innerHTML += '<div class="row">' + blockDivs + '</div>'
     }
-
-
 }
 
 createMaze(map)
 
 document.addEventListener('keydown', moveLink);
+
 let linkTopPos = 270;
 let linkLeftPos = 0;
 let linkInCell = x + "-" + y
 
-function moveLink(evt) {
+ function moveLink(evt) {
     switch (evt.code){
         case "ArrowDown":
-            // if(class!==wall)
-            linkTopPos += 30
-            linkInCell = x + "-" + (y+1)
-            y += 1
-            break; 
+            // if(map[y].charAt(x)!=="W"){
+             if(map[y+1][x]!=="W"){
+                linkTopPos += 30
+                linkInCell = x + "-" + (y+1)
+                y += 1
+                break; 
+            } 
         case "ArrowUp":
-            linkTopPos -= 30
-            linkInCell = x + "-" + (y-1)
-            y -= 1
-            break;
+            if(map[y-1][x]!=="W"){
+                linkTopPos -= 30
+                linkInCell = x + "-" + (y-1)
+                y -= 1
+                break;
+            }
         case "ArrowLeft":
-            linkLeftPos -= 30
-            linkInCell = (x-1) + "-" + y
-            x -= 1
-            break;
+            if(map[y][x-1]!=="W"){
+                linkLeftPos -= 30
+                linkInCell = (x-1) + "-" + y
+                x -= 1
+                break;
+            }
         case "ArrowRight":
-            linkLeftPos += 30;
-            linkInCell = (x+1) + "-" + y;
-            x += 1
-            break;
+            if(map[y][x+1]!=="W"){
+                linkLeftPos += 30;
+                linkInCell = (x+1) + "-" + y;
+                x += 1
+                break;
+            }
+        }
+    
+        // const mazeBoundary = function () {
+        //     switch (linkInCell){
+        //         case "20-8":
+        //             linkLeftPos="19-8"
+        //             break;   
+        //         case "-1-9": 
+        //             linkLeftPos="0-9"
+        //             break;
+        //     }
+        // }
+        // mazeBoundary()
+        
 
+    document.getElementById("link").style.top = linkTopPos + "px";
+    document.getElementById("link").style.left = linkLeftPos + "px";
+
+    let linkTriforceImg= document.createElement("img")
+    linkTriforceImg.id = "grabTriforce"
+    linkTriforceImg.src = "link-triforce.png"
+    
+    const triforceDiv = document.querySelector("#triforce")
+    const finishDiv = document.getElementById("cell20-8")
+    const startDiv = document.getElementById("cell0-9")
+    const link = document.getElementById("link")
+
+        
+    const grabTriforce = function (){
+        if(map[y][x]==="F"){
+            console.log("You won!!!")
+            finishDiv.replaceChild(linkTriforceImg,triforceDiv);
+            let removeLink = startDiv.removeChild(link)
+        }
     }
+grabTriforce()
 
-document.getElementById("link").style.top = linkTopPos + "px";
-document.getElementById("link").style.left = linkLeftPos + "px";
-
-console.log(linkInCell)
+    console.log(linkInCell)
 }
 
 
