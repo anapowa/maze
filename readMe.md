@@ -18,7 +18,7 @@ DEVELOPMENT PLAN:
 3. Start the player on the start square and once the player has made it to the finish square, show the user they have won (!console.log or alert). 
     1. create a div specifically to represent the player. 
         1. Use CSS absolute position to update the position relative to the board || append each instance of the new position to the board. 
-        2. Use animation to show the player is in the winning position.
+        2. Show the player is in the winning position.
         - If (winning position) {do something}
 
 TERMS:
@@ -36,3 +36,7 @@ TERMS:
 
 - Template literals (Template strings): They are string literals allowing embedded expressions. 
 They are enclosed by the backtick (` `) (grave accent) character instead of double or single quotes. They can contain placeholders indicated by the dollar sign and curly braces (${expression}).
+
+- Guard clause: it guards the flow of logic from continuing if certain conditions are met, or not met. 
+They can reduce the number of lines in functions, classes, etc.
+A result of using multiple guard clauses is that you can see what conditions trigger certain code to be executed. 
