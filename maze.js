@@ -1,5 +1,6 @@
-//Based on code from Randy's demo from 25JUN2020, 29JUN2020 
-//and Study Hall with coach Marcus Chiriboga on 29JUN2020.
+//Referenced code from Randy's demo from 25JUN2020, 29JUN2020, 
+// Study Hall with coach Marcus Chiriboga on 29JUN2020 and
+// Study Hall with coach Nikal Morgan on 30JUN2020. 
 const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
     "W   W     W     W W W",
@@ -59,64 +60,73 @@ createMaze(map)
 
 document.addEventListener('keydown', moveLink);
 
-let linkTopPos = 270;
-let linkLeftPos = 0;
+let position = {
+    linkTopPos: 270,
+    linkLeftPos: 0
+}
 let linkInCell = x + "-" + y
 
  function moveLink(evt) {
     switch (evt.code){
         case "ArrowDown":
-            // if(map[y].charAt(x)!=="W"){
              if(map[y+1][x]!=="W"){
-                linkTopPos += 30
+                console.log(map[y][x])
+                position.linkTopPos += 30
                 linkInCell = x + "-" + (y+1)
                 y += 1
                 break; 
             } 
         case "ArrowUp":
             if(map[y-1][x]!=="W"){
-                linkTopPos -= 30
+                console.log(map[y][x])
+                position.linkTopPos -= 30
                 linkInCell = x + "-" + (y-1)
                 y -= 1
                 break;
+            // } else {
+            //     position.linkTopPos = 0
             }
         case "ArrowLeft":
             if(map[y][x-1]!=="W"){
-                linkLeftPos -= 30
+                console.log(map[y][x])
+                position.linkLeftPos -= 30
                 linkInCell = (x-1) + "-" + y
                 x -= 1
                 break;
             }
+            // if (position.linkLeftPos = -30){
+            //     position.linkLeftPos = 0
+            // } 
         case "ArrowRight":
             if(map[y][x+1]!=="W"){
-                linkLeftPos += 30;
+                console.log(map[y][x])
+                position.linkLeftPos += 30;
                 linkInCell = (x+1) + "-" + y;
                 x += 1
                 break;
             }
         }
     
-        // const mazeBoundary = function () {
-        //     switch (linkInCell){
-        //         case "20-8":
-        //             linkLeftPos="19-8"
-        //             break;   
-        //         case "-1-9": 
-        //             linkLeftPos="0-9"
-        //             break;
-        //     }
-        // }
-        // mazeBoundary()
+        const mazeBoundary = function () {            
+            if (linkInCell === "-1-9"){
+                    position.linkLeftPos="0-9"
+                    console.log(map[y][x])
+                    position.linkLeftPos = 0
+                    inkInCell = (x+1) + "-" + y
+                    x+=1
+            }
+        }
+        mazeBoundary()
         
 
-    document.getElementById("link").style.top = linkTopPos + "px";
-    document.getElementById("link").style.left = linkLeftPos + "px";
+    document.getElementById("link").style.top = position.linkTopPos + "px";
+    document.getElementById("link").style.left = position.linkLeftPos + "px";
 
     let linkTriforceImg= document.createElement("img")
     linkTriforceImg.id = "grabTriforce"
     linkTriforceImg.src = "link-triforce.png"
     
-    const triforceDiv = document.querySelector("#triforce")
+    const triforce = document.querySelector("#triforce")
     const finishDiv = document.getElementById("cell20-8")
     const startDiv = document.getElementById("cell0-9")
     const link = document.getElementById("link")
@@ -125,7 +135,7 @@ let linkInCell = x + "-" + y
     const grabTriforce = function (){
         if(map[y][x]==="F"){
             console.log("You won!!!")
-            finishDiv.replaceChild(linkTriforceImg,triforceDiv);
+            finishDiv.replaceChild(linkTriforceImg,triforce);
             let removeLink = startDiv.removeChild(link)
         }
     }
