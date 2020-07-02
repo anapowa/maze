@@ -75,7 +75,8 @@ let linkInCell = x + "-" + y
                 linkInCell = x + "-" + (y+1)
                 y += 1
                 break; 
-            } 
+            } else {break}
+            
         case "ArrowUp":
             if(map[y-1][x]!=="W"){
                 console.log(map[y][x])
@@ -83,9 +84,8 @@ let linkInCell = x + "-" + y
                 linkInCell = x + "-" + (y-1)
                 y -= 1
                 break;
-            // } else {
-            //     position.linkTopPos = 0
-            }
+            } else { break}
+
         case "ArrowLeft":
             if(map[y][x-1]!=="W"){
                 console.log(map[y][x])
@@ -93,10 +93,8 @@ let linkInCell = x + "-" + y
                 linkInCell = (x-1) + "-" + y
                 x -= 1
                 break;
-            }
-            // if (position.linkLeftPos = -30){
-            //     position.linkLeftPos = 0
-            // } 
+            } else { break}
+
         case "ArrowRight":
             if(map[y][x+1]!=="W"){
                 console.log(map[y][x])
@@ -104,11 +102,11 @@ let linkInCell = x + "-" + y
                 linkInCell = (x+1) + "-" + y;
                 x += 1
                 break;
-            }
+            }else { break}
         }
     
         const mazeBoundary = function () {            
-            if (linkInCell === "-1-9"){
+            if (linkInCell === "-1-"+y){
                     position.linkLeftPos="0-9"
                     console.log(map[y][x])
                     position.linkLeftPos = 0
