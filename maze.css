@@ -29,9 +29,10 @@ h1 {
     font-size: 3em;
 }
 
-#cursor {
+#cursor, a {
     font-size: 0.9em;
     color: rgb(99, 154, 232);
+    text-decoration: none;
 
 }
 

@@ -142,4 +142,3 @@ function moveLink(evt) {
 
     console.log(linkInCell)
 }
-
