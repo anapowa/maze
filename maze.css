@@ -29,7 +29,7 @@ h1 {
     font-size: 3em;
 }
 
-#cursor, a {
+#cursor {
     font-size: 0.9em;
     color: rgb(99, 154, 232);
     text-decoration: none;
@@ -126,3 +126,62 @@ footer {
     padding: 20px;
     justify-content: center;
 }
+
+address a {
+    position: relative;
+    margin-top: 0;
+}
+
+.icon-before {
+    top: 1;
+    right: 1;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-main);
+    margin: 1rem 1rem;
+    display: -webkit-inline-box;
+}
+
+.icon-before::before, .icon-before::after{
+    display: inline-block;
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+.icon-before::before {  
+    content: "\f111";
+    font-size: 4rem;
+    display: flex;
+    flex-direction: row;
+    color: var(--bg-primary);
+    color: rgb(150, 65, 35);
+}
+
+.icon-after::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    position: absolute;
+    /* color: rgb(65, 140, 50); */
+}
+    #website::after {
+        content: "\f015";
+    }
+    #twitter::after {
+        content: "\f099";
+    }
+    #linkedin::after {
+        content: "\f0e1";
+    }
+    #github::after {
+        content: "\f09b";
+    }
+    #resume::after {
+        content: "\f15c";
+    }
+
