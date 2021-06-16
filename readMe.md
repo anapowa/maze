@@ -26,7 +26,7 @@ npm install
 
 * Twitter: [@anapowa](https://twitter.com/anapowa)
 * Github: [@anapowa](https://github.com/anapowa)
-* LinkedIn: [@anapowa](https://linkedin/in/anapowa)
+* LinkedIn: [@anapowa](https://www.linkedin.com/in/anapowa/)
 
 ## Show your support
 
