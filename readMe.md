@@ -10,8 +10,6 @@
 
 > HTML, CSS and vanilla JavaScript intended to dynamically create HTML elements to render a model of a maze, develop understanding of event listeners, key down events, edge cases and keep track of player position on a grid. 
 
-### 🏠 [Homepage](https://github.com/anapowa/maze)
-
 ### ✨ [Demo](https://anapowa.github.io/maze/)
 
 ## Install
