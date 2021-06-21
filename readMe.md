@@ -8,7 +8,8 @@
   </a>
 </p>
 
-> Technologies: HTML, CSS and vanilla JavaScript
+> Tech Stack: HTML, CSS and vanilla JavaScript
+
 > Intended to dynamically create HTML elements to render a model of a maze, develop understanding of event listeners, key down events, edge cases and keep track of player position on a grid. 
 
 ### ✨ [Demo](https://anapowa.github.io/maze/)
